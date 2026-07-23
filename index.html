@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akses Eksklusif Koleksi Film Drama Adult 21+</title>
+    <style>
+        :root {
+            --bg-color: #0b0b0f;
+            --card-bg: #16161e;
+            --accent-red: #e50914;
+            --accent-gold: #ffb703;
+            --text-color: #ffffff;
+            --text-dim: #a0a0ab;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: linear-gradient(180deg, rgba(229,9,20,0.2) 0%, rgba(11,11,15,1) 100%);
+        }
+
+        .badge {
+            background-color: var(--accent-red);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+
+        p.subtitle {
+            color: var(--text-dim);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .feature-item {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #2a2a35;
+            font-size: 0.9rem;
+        }
+
+        .feature-item span {
+            color: var(--accent-gold);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Catalog Section */
+        .section-title {
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--accent-red);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .movie-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #2a2a35;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 250px;
+            background-color: #222;
+            object-fit: cover;
+            display: block;
+        }
+
+        .movie-info {
+            padding: 12px;
+        }
+
+        .movie-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-tag {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+        }
+
+        .movie-desc {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Order Section */
+        .order-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px 20px;
+            border: 1px solid var(--accent-red);
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(90deg, #e50914, #ff3b3f);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            border-top: 1px solid #2a2a35;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="badge">Khusus Usia 21+</span>
+        <h1>VIP Access: Koleksi Film Sensual & Seduftif</h1>
+        <p class="subtitle">Buka akses penuh ribuan judul drama dewasa penuh gairah, alur cerita panas, dan adegan menggoda tanpa sensor terpotong.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-item">
+                <span>Kualitas Ultra HD</span>
+                Visual jernih hingga detail terkecil
+            </div>
+            <div class="feature-item">
+                <span>Tanpa Iklan</span>
+                Nonton nyaman tanpa gangguan
+            </div>
+            <div class="feature-item">
+                <span>Update Harian</span>
+                Judul baru setiap minggu
+            </div>
+            <div class="feature-item">
+                <span>Akses Selamanya</span>
+                Sekali bayar untuk sepuasnya
+            </div>
+        </div>
+
+        <!-- Catalog Title -->
+        <div style="text-align: center;">
+            <h2 class="section-title">Katalog Populer Minggu Ini</h2>
+        </div>
+
+        <!-- Movie Catalog Grid (10 Items) -->
+        <div class="catalog-grid">
+            
+            <!-- Movie 1 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Secret+Affair" alt="Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-tag">🔥 Trending Hot</div>
+                    <div class="movie-title">Secret Affair: Behind Closed Doors</div>
+                    <div class="movie-desc">Kisah skandal terlarang antara sekretaris dan atasan yang penuh manipulasi dan gairah.</div>
+                </div>
+            </div>
+
+            <!-- Movie 2 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Midnight+Temptation" alt="Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-tag">💋 Drama Sensual</div>
+                    <div class="movie-title">Midnight Temptation</div>
+                    <div class="movie-desc">Tetangga baru yang menggoda mengubah malam-malam biasa menjadi ketegangan tak tertahankan.</div>
+                </div>
+            </div>
+
+            <!-- Movie 3 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Dangerous+Desire" alt="Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-tag">⭐ Rating 9.8</div>
+                    <div class="movie-title">Dangerous Desire</div>
+                    <div class="movie-desc">Permainan godaan berbahaya yang berujung pada hasrat terlarang tanpa batas.</div>
+                </div>
+            </div>
+
+            <!-- Movie 4 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=The+Lust+Hotel" alt="Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-tag">🔥 Paling Dicari</div>
+                    <div class="movie-title">The Private Suite</div>
+                    <div class="movie-desc">Rahasia gelap di balik pintu kamar hotel mewah dan tamu-tamu yang haus kepuasan.</div>
+                </div>
+            </div>
+
+            <!-- Movie 5 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Forbidden+Love" alt="Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-tag">💋 Uncut Version</div>
+                    <div class="movie-title">Forbidden Passion</div>
+                    <div class="movie-desc">Cinta segitiga yang dibalut nafsu mendalam, memecahkan semua aturan sosial.</div>
+                </div>
+            </div>
+
+            <!-- Movie 6 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Seductive+Nanny" alt="Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-tag">🔥 Best Seller</div>
+                    <div class="movie-title">The Seductive Guest</div>
+                    <div class="movie-desc">Kehadiran tamu wanita misterius yang perlahan meruntuhkan iman sang pemilik rumah.</div>
+                </div>
+            </div>
+
+            <!-- Movie 7 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Wet+Summer" alt="Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-tag">💋 Romansa Dewasa</div>
+                    <div class="movie-title">Hot Summer Nights</div>
+                    <div class="movie-desc">Liburan musim panas di vila terpencil yang menjadi saksi gairah membara.</div>
+                </div>
+            </div>
+
+            <!-- Movie 8 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Intimate+Lessons" alt="Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-tag">⭐ Top Rated</div>
+                    <div class="movie-title">Private Tutor</div>
+                    <div class="movie-desc">Pelajaran pribadi yang beralih menjadi sesi eksplorasi kenikmatan tersembunyi.</div>
+                </div>
+            </div>
+
+            <!-- Movie 9 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Office+Romance" alt="Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-tag">🔥 Edisi Terbatas</div>
+                    <div class="movie-title">Overtime Passion</div>
+                    <div class="movie-desc">Kerja lembur di ruang kerja sepi yang berujung pada adegan paling mendebarkan.</div>
+                </div>
+            </div>
+
+            <!-- Movie 10 -->
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Erotic+Dreams" alt="Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-tag">💋 Full HD</div>
+                    <div class="movie-title">Sweet Obsession</div>
+                    <div class="movie-desc">Obsesi berlebih membawa dua insan ke dalam lingkaran fantasi yang liar.</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Direct CTA Button to Scroll to Form -->
+        <a href="#order-form-container" class="cta-button">DAPATKAN AKSES VIP SEKARANG (DISKON 50%)</a>
+
+        <!-- Order Form Section Embed -->
+        <div class="order-section" id="order-form-container">
+            <h2 style="text-align: center; margin-bottom: 10px; font-size: 1.4rem; color: var(--accent-gold);">Form Pemesanan Akses Instant</h2>
+            <p style="text-align: center; font-size: 0.85rem; color: var(--text-dim); margin-bottom: 20px;">Isi data di bawah ini untuk menerima tautan akses VIP ke Google Drive / Server Streaming Premium.</p>
+            
+            <!-- ORDERHERO EMBED CODE START -->
+            <iframe id="orderhero-frame-6a5e5e02aae75a7e5d0f9d31" src="https://selaluuntung.orderhero.id/form/form-order-drama-cop" width="100%" height="0" frameborder="0" style="border:none;border-radius:8px;display:block;height:0;transition:height 0.2s;"></iframe>
+            <script>(function(){var f=document.getElementById('orderhero-frame-6a5e5e02aae75a7e5d0f9d31');if(!f)return;window.addEventListener('message',function(e){if(!e.data||!e.source)return;if(f.contentWindow!==e.source)return;if(e.data.type==='orderhero:resize'){f.style.height=e.data.height+'px';}if(e.data.type==='orderhero:request-viewport'){var r=f.getBoundingClientRect();var sy=window.scrollY||window.pageYOffset||0;e.source.postMessage({type:'orderhero:viewport-info',iframeY:r.top+sy,scrollY:sy,viewH:window.innerHeight},'*');}if(e.data.type==='orderhero:navigate'&&typeof e.data.url==='string'){var navUrl=e.data.url;if(navUrl.indexOf('/')===0){navUrl=e.origin+navUrl;}window.location.href=navUrl;}});})();</script>
+            <!-- ORDERHERO EMBED CODE END -->
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Cinema VIP Adult Pass. Khusus untuk pengguna berusia 21 tahun ke atas.</p>
+    </footer>
+
+</body>
+</html>
