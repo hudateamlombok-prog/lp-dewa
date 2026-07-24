@@ -7,6 +7,7 @@
     <style>
         :root {
             --primary-color: #e50914;
+            --primary-glow: rgba(229, 9, 20, 0.4);
             --bg-color: #141414;
             --card-bg: #1f1f1f;
             --text-color: #ffffff;
@@ -71,11 +72,14 @@
             font-weight: bold;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--primary-glow);
         }
 
         .btn-cta:hover {
             background-color: #f40612;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
         }
 
         /* Catalog Section */
@@ -133,82 +137,186 @@
             font-weight: bold;
         }
 
-        /* Pricing Section */
+        /* EXCLUSIVE PRICING SECTION */
         .pricing {
-            padding: 40px 0 60px;
-            background-color: #0b0b0b;
+            padding: 70px 0;
+            background: radial-gradient(circle at center, #1f080a 0%, #0a0a0a 100%);
+            border-top: 1px solid #2a0b0e;
+            border-bottom: 1px solid #2a0b0e;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .pricing-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
         }
 
         .price-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: center;
         }
 
+        /* Standard Card */
         .price-card {
-            background: var(--card-bg);
+            background: #181818;
             border: 1px solid #333;
-            border-radius: 12px;
-            padding: 30px;
+            border-radius: 16px;
+            padding: 35px 25px;
             text-align: center;
             position: relative;
+            transition: all 0.3s ease;
         }
 
-        .price-card.popular {
+        /* Exclusive Red Promo Card */
+        .price-card.exclusive {
+            background: linear-gradient(145deg, #260a0d 0%, #141414 100%);
             border: 2px solid var(--primary-color);
+            box-shadow: 0 0 25px var(--primary-glow);
+            padding: 45px 30px;
+            transform: scale(1.03);
         }
 
-        .badge {
+        .exclusive-badge {
             position: absolute;
-            top: -12px;
+            top: -16px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary-color);
-            color: white;
-            padding: 4px 15px;
-            font-size: 0.8rem;
-            border-radius: 20px;
-            font-weight: bold;
+            background: linear-gradient(90deg, #e50914, #ff3b30);
+            color: #fff;
+            padding: 6px 20px;
+            font-size: 0.82rem;
+            border-radius: 30px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(229, 9, 20, 0.5);
+            white-space: nowrap;
         }
 
         .price-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            font-weight: 700;
             margin-bottom: 15px;
         }
 
-        .price {
-            font-size: 2.2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
+        .exclusive .price-title {
             color: #fff;
+            font-size: 1.6rem;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #777;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .exclusive .price {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(225, 9, 20, 0.3);
         }
 
         .price span {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .discount-tag {
+            display: inline-block;
+            background: rgba(229, 9, 20, 0.2);
+            border: 1px solid var(--primary-color);
+            color: #ff4d4d;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
         }
 
         .features {
             list-style: none;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             text-align: left;
+            border-top: 1px solid #2a2a2a;
+            padding-top: 20px;
+        }
+
+        .exclusive .features {
+            border-top-color: #3d1418;
         }
 
         .features li {
-            margin-bottom: 10px;
-            color: #ccc;
+            margin-bottom: 12px;
+            color: #ddd;
             font-size: 0.95rem;
+            display: flex;
+            align-items: center;
         }
 
-        .features li::before {
-            content: "✓ ";
-            color: #46d369;
+        .features li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-style: normal;
             font-weight: bold;
         }
 
-        /* Order Section - Full Width Edge-to-Edge (Tanpa Container / Margin Sisa Kiri Kanan) */
+        .btn-select {
+            display: block;
+            width: 100%;
+            padding: 14px 0;
+            text-align: center;
+            background: #2b2b2b;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .btn-select-exclusive {
+            display: block;
+            width: 100%;
+            padding: 16px 0;
+            text-align: center;
+            background: linear-gradient(90deg, #e50914, #b20710);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px var(--primary-glow);
+            transition: all 0.3s ease;
+        }
+
+        .btn-select-exclusive:hover {
+            background: linear-gradient(90deg, #ff0a16, #d60713);
+            box-shadow: 0 6px 20px rgba(229, 9, 20, 0.7);
+        }
+
+        /* Order Section - Full Width Edge-to-Edge */
         .order-section {
             width: 100%;
             padding: 60px 0 0 0;
@@ -247,6 +355,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             .movie-grid { grid-template-columns: repeat(2, 1fr); }
+            .price-card.exclusive { transform: scale(1); }
             .order-section { padding-top: 30px; }
             .order-section-title { font-size: 1.4rem; }
         }
@@ -260,7 +369,7 @@
             <div class="logo">STREAMFLIX</div>
             <h1>Nonton Ribuan Film & Serial Premium Tanpa Batas</h1>
             <p>Kualitas 4K Ultra HD, Tanpa Iklan, Bebas Akses Kapan Saja & Di Mana Saja.</p>
-            <a href="#order-form" class="btn-cta">PESAN SEKARANG</a>
+            <a href="#order-form" class="btn-cta">DAPATKAN PROMO SEKARANG</a>
         </div>
     </header>
 
@@ -354,36 +463,47 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- Exclusive Pricing Section -->
     <section class="pricing">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">Pilihan Paket Hemat</h2>
+            <div class="pricing-header">
+                <h2>PILIH PAKET AKSES APLIKASI</h2>
+                <p>Nikmati seluruh tontonan favorit dengan penawaran eksklusif terbatas hari ini.</p>
+            </div>
+
             <div class="price-grid">
                 
+                <!-- Regular Card -->
                 <div class="price-card">
                     <div class="price-title">Akses Bulanan</div>
-                    <div class="price">Rp 79.000 <span>/ bln</span></div>
+                    <span class="old-price">Rp 150.000</span>
+                    <div class="price">Rp 79.000 <span>/ bulan</span></div>
                     <ul class="features">
-                        <li>Akses Kualitas 4K Ultra HD</li>
-                        <li>Bisa Digunakan di HP, TV, Laptop</li>
-                        <li>Bebas Iklan</li>
-                        <li>Masa Aktif 1 Bulan</li>
-                        <li>Garansi Full 30 Hari</li>
+                        <li><i>✓</i> Akses Kualitas 4K Ultra HD</li>
+                        <li><i>✓</i> Support HP, TV, & Laptop</li>
+                        <li><i>✓</i> Bebas Iklan Pengganggu</li>
+                        <li><i>✓</i> Masa Aktif 1 Bulan</li>
                     </ul>
+                    <a href="#order-form" class="btn-select">PILIH BULANAN</a>
                 </div>
 
-                <div class="price-card popular">
-                    <div class="badge">PROMO PALING HEMAT</div>
-                    <div class="price-title">Akses Selamanya</div>
+                <!-- Exclusive Red Promo Card -->
+                <div class="price-card exclusive">
+                    <div class="exclusive-badge">🔥 PROMO EKSKLUSIF - HEMAT 60%</div>
+                    <div class="price-title">Akses Lifetime VIP</div>
+                    <span class="old-price">Rp 250.000</span>
                     <div class="price">Rp 97.000 <span>/ sekali bayar</span></div>
+                    <span class="discount-tag">HANYA UNTUK 100 PENDAFTAR PERTAMA</span>
+                    
                     <ul class="features">
-                        <li><strong>Akses Seumur Hidup (Lifetime)</strong></li>
-                        <li>Akses Kualitas 4K Ultra HD</li>
-                        <li>Bisa Digunakan di Semua Perangkat</li>
-                        <li>Bebas Iklan & Download Offline</li>
-                        <li>Update Film Terbaru Setiap Minggu</li>
-                        <li>Garansi & Layanan CS Prioritas</li>
+                        <li><i>✓</i> <strong>Akses Seumur Hidup (Tanpa Biaya Bulanan)</strong></li>
+                        <li><i>✓</i> Akses Kualitas 4K Ultra HD Tanpa Batas</li>
+                        <li><i>✓</i> Bebas Gunakan di Semua Perangkat</li>
+                        <li><i>✓</i> Bebas Iklan & Fitur Download Offline</li>
+                        <li><i>✓</i> Update Film Terbaru Otomatis Setiap Minggu</li>
+                        <li><i>✓</i> Garansi Penuh & CS Prioritas 24/7</li>
                     </ul>
+                    <a href="#order-form" class="btn-select-exclusive">AMBIL PROMO VIP SEKARANG</a>
                 </div>
 
             </div>
