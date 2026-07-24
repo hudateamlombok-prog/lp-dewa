@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akses Eksklusif Koleksi Film Drama Adult 21+</title>
+    <title>StreamFlix Premium - Akses Film Tanpa Batas</title>
     <style>
         :root {
-            --bg-color: #0b0b0f;
-            --card-bg: #16161e;
-            --accent-red: #e50914;
-            --accent-gold: #ffb703;
+            --primary-color: #e50914;
+            --bg-color: #141414;
+            --card-bg: #1f1f1f;
             --text-color: #ffffff;
-            --text-dim: #a0a0ab;
+            --text-muted: #aaaaaa;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         body {
@@ -27,106 +26,92 @@
             line-height: 1.6;
         }
 
-        header {
-            text-align: center;
-            padding: 40px 15px 25px;
-            background: linear-gradient(180deg, rgba(229,9,20,0.2) 0%, rgba(11,11,15,1) 100%);
-        }
-
-        .badge {
-            background-color: var(--accent-red);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-            color: #fff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-        }
-
-        p.subtitle {
-            color: var(--text-dim);
-            font-size: 1rem;
-            max-width: 700px;
-            margin: 0 auto 20px;
-        }
-
+        /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 15px;
+            padding: 0 20px;
         }
 
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 40px;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(20, 20, 20, 1)), 
+                        url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1200') center/cover no-repeat;
             text-align: center;
+            padding: 100px 20px 60px;
         }
 
-        .feature-item {
-            background: var(--card-bg);
-            padding: 18px;
-            border-radius: 10px;
-            border: 1px solid #2a2a35;
-            font-size: 0.9rem;
-        }
-
-        .feature-item span {
-            color: var(--accent-gold);
+        .logo {
+            color: var(--primary-color);
+            font-size: 2.5rem;
             font-weight: bold;
-            display: block;
-            margin-bottom: 6px;
-            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-cta:hover {
+            background-color: #f40612;
         }
 
         /* Catalog Section */
-        .section-title {
-            text-align: center;
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-            border-bottom: 3px solid var(--accent-red);
-            display: inline-block;
-            padding-bottom: 8px;
+        .catalog {
+            padding: 60px 0;
         }
 
-        .catalog-grid {
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .movie-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 15px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
         }
 
         .movie-card {
-            background: var(--card-bg);
-            border-radius: 10px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
             overflow: hidden;
-            border: 1px solid #2a2a35;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
+            position: relative;
         }
 
         .movie-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-red);
+            transform: scale(1.05);
         }
 
-        .movie-poster {
+        .movie-card img {
             width: 100%;
-            height: 230px;
-            background-color: #222;
+            height: 260px;
             object-fit: cover;
-            display: block;
         }
 
         .movie-info {
@@ -134,291 +119,291 @@
         }
 
         .movie-title {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: bold;
-            margin-bottom: 5px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
         .movie-tag {
-            font-size: 0.7rem;
-            color: var(--accent-gold);
-            margin-bottom: 6px;
-        }
-
-        .movie-desc {
             font-size: 0.75rem;
-            color: var(--text-dim);
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .cta-button {
-            display: block;
-            width: 100%;
-            margin: 0 auto 40px;
-            background: linear-gradient(90deg, #e50914, #ff3b3f);
-            color: white;
-            text-align: center;
-            padding: 18px;
-            border-radius: 10px;
+            color: #46d369;
+            margin-top: 5px;
             font-weight: bold;
-            font-size: 1.1rem;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
-            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.01); }
-            100% { transform: scale(1); }
+        /* Pricing Section */
+        .pricing {
+            padding: 40px 0 60px;
+            background-color: #0b0b0b;
         }
 
-        /* Order Section (Murni Mengikuti Layout Utama) */
-        .order-section {
-            width: 100%;
-            margin: 0 auto 50px;
-            padding: 0;
-            background: transparent;
-            border: none;
-            box-shadow: none;
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
-        .order-title {
-            text-align: center;
-            margin-bottom: 8px;
-            font-size: 1.6rem;
-            color: var(--accent-gold);
-        }
-
-        .order-subtitle {
-            text-align: center;
-            font-size: 0.95rem;
-            color: var(--text-dim);
-            margin-bottom: 25px;
-        }
-
-        /* Wrapper Iframe Bersih tanpa Bingkai */
-        .iframe-container {
-            width: 100%;
-            background: #ffffff;
+        .price-card {
+            background: var(--card-bg);
+            border: 1px solid #333;
             border-radius: 12px;
-            padding: 10px;
-            overflow-y: auto !important;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        #orderhero-frame-6a5e5e02aae75a7e5d0f9d31 {
-            width: 100% !important;
-            min-height: 900px !important;
-            border: none;
-            display: block;
-        }
-
-        /* Direct Mobile Link Fallback */
-        .direct-link-box {
-            display: none;
+            padding: 30px;
             text-align: center;
-            margin-top: 15px;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            position: relative;
         }
 
-        .direct-link-box a {
-            color: var(--accent-gold);
-            text-decoration: underline;
-            font-size: 0.85rem;
+        .price-card.popular {
+            border: 2px solid var(--primary-color);
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 15px;
+            font-size: 0.8rem;
+            border-radius: 20px;
             font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .price-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        .features li::before {
+            content: "✓ ";
+            color: #46d369;
+            font-weight: bold;
+        }
+
+        /* Form Section */
+        .order-section {
+            padding: 60px 0;
+            background-color: var(--bg-color);
+        }
+
+        .form-container {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 30px;
+            color: var(--text-muted);
             font-size: 0.85rem;
-            color: var(--text-dim);
-            border-top: 1px solid #2a2a35;
+            border-top: 1px solid #222;
         }
 
-        /* Responsif HP */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .iframe-container {
-                padding: 5px;
-            }
-
-            #orderhero-frame-6a5e5e02aae75a7e5d0f9d31 {
-                min-height: 1350px !important; 
-                height: 1350px !important;
-            }
-
-            .direct-link-box {
-                display: block;
-            }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .movie-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <span class="badge">Khusus Usia 21+</span>
-        <h1>VIP Access: Koleksi Film Sensual & Seduktif</h1>
-        <p class="subtitle">Buka akses penuh ribuan judul drama dewasa penuh gairah, alur cerita panas, dan adegan menggoda tanpa sensor terpotong.</p>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="logo">STREAMFLIX</div>
+            <h1>Nonton Ribuan Film & Serial Premium Tanpa Batas</h1>
+            <p>Kualitas 4K Ultra HD, Tanpa Iklan, Bebas Akses Kapan Saja & Di Mana Saja.</p>
+            <a href="#order-form" class="btn-cta">PESAN SEKARANG</a>
+        </div>
     </header>
 
-    <div class="container">
+    <!-- Catalog Section -->
+    <section class="catalog">
+        <div class="container">
+            <h2 class="section-title">🔥 Sedang Tayang Minggu Ini</h2>
+            <div class="movie-grid">
+                
+                <!-- Film 1 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400" alt="Movie Poster">
+                    <div class="movie-info">
+                        <div class="movie-title">Stranger Things S5</div>
+                        <div class="movie-tag">99% Match • 4K HD</div>
+                    </div>
+                </div>
 
-        <!-- Features -->
-        <div class="features">
-            <div class="feature-item">
-                <span>Kualitas Ultra HD</span>
-                Visual jernih hingga detail terkecil
-            </div>
-            <div class="feature-item">
-                <span>Tanpa Iklan</span>
-                Nonton nyaman tanpa gangguan
-            </div>
-            <div class="feature-item">
-                <span>Update Harian</span>
-                Judul baru setiap minggu
-            </div>
-            <div class="feature-item">
-                <span>Akses Selamanya</span>
-                Sekali bayar untuk sepuasnya
+                <!-- Film 2 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=400" alt="Movie Poster">
+                    <div class="movie-info">
+                        <div class="movie-title">The Dark Knight Rises</div>
+                        <div class="movie-tag">98% Match • 4K HD</div>
+                    </div>
+                </div>
+
+                <!-- Film 3 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400" alt="Movie Poster">
+                    <div class="movie-info">
+                        <div class="movie-title">Cyberpunk: Edgerunners</div>
+                        <div class="movie-tag">95% Match • 4K HD</div>
+                    </div>
+                </div>
+
+                <!-- Film 4 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=400" alt="Movie Poster">
+                    <div class="movie-info">
+                        <div class="movie-title">Anime Legends: Origin</div>
+                        <div class="movie-tag">97% Match • 4K HD</div>
+                    </div>
+                </div>
+
+                <!-- Film 5 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=400" alt="Movie Poster">
+                    <div class="movie-info">
+                        <div class="movie-title">The Last Horizon</div>
+                        <div class="movie-tag">93% Match • 4K HD</div>
+                    </div>
+                </div>
+
+                <!-- Film 6 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=400" alt="Movie Poster">
+                    <div class="movie-info">
+                        <div class="movie-title">Squid Game Season 2</div>
+                        <div class="movie-tag">99% Match • 4K HD</div>
+                    </div>
+                </div>
+
+                <!-- Film 7 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=400" alt="Movie Poster">
+                    <div class="movie-info">
+                        <div class="movie-title">Cinema Paradiso</div>
+                        <div class="movie-tag">91% Match • Full HD</div>
+                    </div>
+                </div>
+
+                <!-- Film 8 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400" alt="Movie Poster">
+                    <div class="movie-info">
+                        <div class="movie-title">The Detective Stories</div>
+                        <div class="movie-tag">94% Match • 4K HD</div>
+                    </div>
+                </div>
+
+                <!-- Film 9 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1512070679279-8988d32161be?q=80&w=400" alt="Movie Poster">
+                    <div class="movie-info">
+                        <div class="movie-title">Money Heist: Berlin</div>
+                        <div class="movie-tag">96% Match • 4K HD</div>
+                    </div>
+                </div>
+
+                <!-- Film 10 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=400" alt="Movie Poster">
+                    <div class="movie-info">
+                        <div class="movie-title">Interstellar Voyage</div>
+                        <div class="movie-tag">98% Match • 4K HD</div>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </section>
 
-        <!-- Catalog Title -->
-        <div style="text-align: center;">
-            <h2 class="section-title">Katalog Populer Minggu Ini</h2>
-        </div>
-
-        <!-- Movie Catalog Grid (10 Items) -->
-        <div class="catalog-grid">
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Secret+Affair" alt="Poster" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-tag">🔥 Trending Hot</div>
-                    <div class="movie-title">Secret Affair: Behind Closed Doors</div>
-                    <div class="movie-desc">Kisah skandal terlarang antara sekretaris dan atasan yang penuh manipulasi dan gairah.</div>
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Pilihan Paket Hemat</h2>
+            <div class="price-grid">
+                
+                <!-- Paket 1 Bulan -->
+                <div class="price-card">
+                    <div class="price-title">Akses Bulanan</div>
+                    <div class="price">Rp 79.000 <span>/ bln</span></div>
+                    <ul class="features">
+                        <li>Akses Kualitas 4K Ultra HD</li>
+                        <li>Bisa Digunakan di HP, TV, Laptop</li>
+                        <li>Bebas Iklan</li>
+                        <li>Masa Aktif 1 Bulan</li>
+                        <li>Garansi Full 30 Hari</li>
+                    </ul>
                 </div>
-            </div>
 
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Midnight+Temptation" alt="Poster" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-tag">💋 Drama Sensual</div>
-                    <div class="movie-title">Midnight Temptation</div>
-                    <div class="movie-desc">Tetangga baru yang menggoda mengubah malam-malam biasa menjadi ketegangan tak tertahankan.</div>
+                <!-- Paket Selamanya -->
+                <div class="price-card popular">
+                    <div class="badge">PROMO PALING HEMAT</div>
+                    <div class="price-title">Akses Selamanya</div>
+                    <div class="price">Rp 97.000 <span>/ sekali bayar</span></div>
+                    <ul class="features">
+                        <li><strong>Akses Seumur Hidup (Lifetime)</strong></li>
+                        <li>Akses Kualitas 4K Ultra HD</li>
+                        <li>Bisa Digunakan di Semua Perangkat</li>
+                        <li>Bebas Iklan & Download Offline</li>
+                        <li>Update Film Terbaru Setiap Minggu</li>
+                        <li>Garansi & Layanan CS Prioritas</li>
+                    </ul>
                 </div>
-            </div>
 
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Dangerous+Desire" alt="Poster" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-tag">⭐ Rating 9.8</div>
-                    <div class="movie-title">Dangerous Desire</div>
-                    <div class="movie-desc">Permainan godaan berbahaya yang berujung pada hasrat terlarang tanpa batas.</div>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=The+Lust+Hotel" alt="Poster" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-tag">🔥 Paling Dicari</div>
-                    <div class="movie-title">The Private Suite</div>
-                    <div class="movie-desc">Rahasia gelap di balik pintu kamar hotel mewah dan tamu-tamu yang haus kepuasan.</div>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Forbidden+Love" alt="Poster" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-tag">💋 Uncut Version</div>
-                    <div class="movie-title">Forbidden Passion</div>
-                    <div class="movie-desc">Cinta segitiga yang dibalut nafsu mendalam, memecahkan semua aturan sosial.</div>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Seductive+Nanny" alt="Poster" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-tag">🔥 Best Seller</div>
-                    <div class="movie-title">The Seductive Guest</div>
-                    <div class="movie-desc">Kehadiran tamu wanita misterius yang perlahan meruntuhkan iman sang pemilik rumah.</div>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Wet+Summer" alt="Poster" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-tag">💋 Romansa Dewasa</div>
-                    <div class="movie-title">Hot Summer Nights</div>
-                    <div class="movie-desc">Liburan musim panas di vila terpencil yang menjadi saksi gairah membara.</div>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Intimate+Lessons" alt="Poster" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-tag">⭐ Top Rated</div>
-                    <div class="movie-title">Private Tutor</div>
-                    <div class="movie-desc">Pelajaran pribadi yang beralih menjadi sesi eksplorasi kenikmatan tersembunyi.</div>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Office+Romance" alt="Poster" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-tag">🔥 Edisi Terbatas</div>
-                    <div class="movie-title">Overtime Passion</div>
-                    <div class="movie-desc">Kerja lembur di ruang kerja sepi yang berujung pada adegan paling mendebarkan.</div>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/200x300/330000/ffffff?text=Erotic+Dreams" alt="Poster" class="movie-poster">
-                <div class="movie-info">
-                    <div class="movie-tag">💋 Full HD</div>
-                    <div class="movie-title">Sweet Obsession</div>
-                    <div class="movie-desc">Obsesi berlebih membawa dua insan ke dalam lingkaran fantasi yang liar.</div>
-                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Direct CTA Button -->
-        <a href="#order-form-container" class="cta-button">DAPATKAN AKSES VIP SEKARANG (DISKON 50%)</a>
-
-        <!-- Order Form Section Embed (Tanpa Border Merah) -->
-        <div class="order-section" id="order-form-container">
-            <h2 class="order-title">Form Pemesanan Akses Instant</h2>
-            <p class="order-subtitle">Lengkapi data di bawah ini untuk mengaktifkan keanggotaan VIP Anda secara otomatis.</p>
-            
-            <div class="iframe-container">
-                <!-- ORDERHERO EMBED CODE START -->
-                <iframe id="orderhero-frame-6a5e5e02aae75a7e5d0f9d31" src="https://selaluuntung.orderhero.id/form/form-order-drama-cop" width="100%" height="1350" frameborder="0" style="border:none;border-radius:8px;display:block;min-height:1350px;transition:height 0.2s;"></iframe>
-                <script>(function(){var f=document.getElementById('orderhero-frame-6a5e5e02aae75a7e5d0f9d31');if(!f)return;window.addEventListener('message',function(e){if(!e.data||!e.source)return;if(f.contentWindow!==e.source)return;if(e.data.type==='orderhero:resize'){var isMobile=window.innerWidth<=768;var targetH=e.data.height;if(isMobile&&targetH<1200){targetH=1350;}f.style.height=targetH+'px';f.style.minHeight=targetH+'px';}if(e.data.type==='orderhero:request-viewport'){var r=f.getBoundingClientRect();var sy=window.scrollY||window.pageYOffset||0;e.source.postMessage({type:'orderhero:viewport-info',iframeY:r.top+sy,scrollY:sy,viewH:window.innerHeight},'*');}if(e.data.type==='orderhero:navigate'&&typeof e.data.url==='string'){var navUrl=e.data.url;if(navUrl.indexOf('/')===0){navUrl=e.origin+navUrl;}window.location.href=navUrl;}});})();</script>
-                <!-- ORDERHERO EMBED CODE END -->
-            </div>
-
-            <!-- Tautan Cadangan HP -->
-            <div class="direct-link-box">
-                <p>Form tidak terbuka sempurna? <a href="https://selaluuntung.orderhero.id/form/form-order-drama-cop" target="_blank" rel="noopener">Klik di sini untuk mengisi form di halaman penuh</a></p>
+    <!-- Order Form Section -->
+    <section class="order-section" id="order-form">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; border: none; margin-bottom: 30px;">
+                Formulir Pemesanan Quick Checkout
+            </h2>
+            <div class="form-container">
+                <!-- OrderHero Embed Code -->
+                <iframe id="orderhero-frame-6a5c580420a83b6032c383c9" src="https://selaluuntung.orderhero.id/form/form-order-drama" width="100%" height="0" frameborder="0" style="border:none;border-radius:8px;display:block;height:0;transition:height 0.2s;"></iframe>
+                <script>(function(){var f=document.getElementById('orderhero-frame-6a5c580420a83b6032c383c9');if(!f)return;window.addEventListener('message',function(e){if(!e.data||!e.source)return;if(f.contentWindow!==e.source)return;if(e.data.type==='orderhero:resize'){f.style.height=e.data.height+'px';}if(e.data.type==='orderhero:request-viewport'){var r=f.getBoundingClientRect();var sy=window.scrollY||window.pageYOffset||0;e.source.postMessage({type:'orderhero:viewport-info',iframeY:r.top+sy,scrollY:sy,viewH:window.innerHeight},'*');}if(e.data.type==='orderhero:navigate'&&typeof e.data.url==='string'){var navUrl=e.data.url;if(navUrl.indexOf('/')===0){navUrl=e.origin+navUrl;}window.location.href=navUrl;}});})();</script>
             </div>
         </div>
+    </section>
 
-    </div>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Cinema VIP Adult Pass. Khusus untuk pengguna berusia 21 tahun ke atas.</p>
+        <p>&copy; 2026 StreamFlix Premium. All rights reserved.</p>
     </footer>
 
 </body>
